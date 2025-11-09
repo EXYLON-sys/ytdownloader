@@ -104,3 +104,5 @@ def main(page: ft.Page):
             ft.Text("Verzió: Web 1.0", size=12, italic=True),
         ])
     )
+
+ft.app(target=main, view=ft.WEB_BROWSER)
