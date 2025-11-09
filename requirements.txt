@@ -1,0 +1,4 @@
+fastapi
+flet
+yt-dlp
+uvicorn

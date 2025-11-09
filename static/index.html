@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎵 YTDownloader | EXYLON</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="hero">
+    <div class="glass-box">
+      <h1>🎵 <span>YTDownloader</span></h1>
+      <p class="tagline">Download your favorite music & playlists fast and easy</p>
+
+      <div class="buttons">
+        <button id="open-app" class="btn primary">
+          🌐 Use Online Downloader
+        </button>
+
+        <a href="https://github.com/EXYLON-sys/ytdownloader/releases/download/v1.0.0/YTDownloader_Setup.exe"
+           class="btn secondary">
+          💾 Download Desktop Installer
+        </a>
+      </div>
+
+      <div class="features">
+        <p>🎧 Supports playlists & single videos</p>
+        <p>🚀 High-speed multi-thread downloads</p>
+        <p>🔒 100% free, no ads, no tracking</p>
+      </div>
+    </div>
+
+    <footer>© 2025 EXYLON-sys | YTDownloader v1.0</footer>
+  </div>
+
+  <!-- Fade Transition Overlay -->
+  <div id="fade-overlay"></div>
+
+  <script>
+    const openBtn = document.getElementById("open-app");
+    const overlay = document.getElementById("fade-overlay");
+
+    openBtn.addEventListener("click", () => {
+      overlay.classList.add("fade-out");
+      setTimeout(() => {
+        window.location.href = "/app";
+      }, 1000); // wait for animation before redirect
+    });
+  </script>
+</body>
+</html>
+
