@@ -6,6 +6,7 @@ from app.main_flet import main as flet_main
 
 import os, re, subprocess, json, shutil, uuid
 import yt_dlp
+import uvicorn
 
 # -------------------------------
 # CONFIG
@@ -43,7 +44,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 def read_root():
     return FileResponse("static/index.html")
 
-# Flet app at /app
+# Mount Flet app at /app (not as default)
 flet_app = flet_fastapi.app(target=flet_main)
 app.mount("/app", flet_app)
 
@@ -136,3 +137,11 @@ def developer_command(cmd: str = Form(...)):
         return {"response": ""}
     else:
         return {"response": f"Unknown command: {cmd}"}
+
+
+# -------------------------------
+# ENTRY POINT (Render compatibility)
+# -------------------------------
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
